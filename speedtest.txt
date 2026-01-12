@@ -1,7 +1,4 @@
-#####################################
-# Created By Buananet.com 
-# LIST IP: Mikrotik-Speedtest
-#####################################
+
 /ip firewall address-list
 rem [find list="Mikrotik-Speedtest"]
 add list=Mikrotik-Speedtest address=100.42.144.20
