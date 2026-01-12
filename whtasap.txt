@@ -1,0 +1,16 @@
+/ip firewall raw
+rem [find address-list=Mikrotik-WhatsApp]
+add action=add-dst-to-address-list address-list=Mikrotik-WhatsApp address-list-timeout=1d chain=prerouting protocol=tcp tls-host=*whatsapp.com* dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-WhatsApp address-list-timeout=1d chain=prerouting protocol=tcp tls-host=*.whatsapp.* dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-WhatsApp address-list-timeout=1d chain=prerouting protocol=tcp tls-host=*wa.me* dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+add action=add-dst-to-address-list address-list=Mikrotik-WhatsApp address-list-timeout=1d chain=prerouting protocol=tcp tls-host=*.wa.* dst-address-list=!LOCAL-IP src-address-list=LOCAL-IP
+
+/ip firewall address-list
+rem [find list="Mikrotik-WhatsApp"]
+add address=66.111.48.0/22 list=Mikrotik-WhatsApp
+
+
+/ip firewall mangle add action=mark-routing chain=prerouting src-address-list=LOCAL-IP dst-address-list="Mikrotik-WhatsApp" new-routing-mark="To-ISP-1" passthrough=no place-before=*0 comment="WhatsApp - buananet.com"
+
+
+
