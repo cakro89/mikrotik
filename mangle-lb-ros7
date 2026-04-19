@@ -1,0 +1,65 @@
+
+/routing table
+add name=to-ether1 fib
+add name=to-ether2 fib
+add name=to-ether3 fib
+add name=to-ether4 fib
+
+
+
+
+/ip firewall mangle
+
+# =========================
+# 0. BYPASS TRAFIK LOKAL
+# =========================
+add chain=prerouting dst-address-type=local action=accept
+
+# =========================
+# 1. MARK CONNECTION (PCC 14)
+# =========================
+
+# ether1 (6 bagian)
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/0 action=mark-connection new-connection-mark=conn1 passthrough=yes
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/1 action=mark-connection new-connection-mark=conn1 passthrough=yes
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/2 action=mark-connection new-connection-mark=conn1 passthrough=yes
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/3 action=mark-connection new-connection-mark=conn1 passthrough=yes
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/4 action=mark-connection new-connection-mark=conn1 passthrough=yes
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/5 action=mark-connection new-connection-mark=conn1 passthrough=yes
+
+# ether2 (2 bagian)
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/6 action=mark-connection new-connection-mark=conn2 passthrough=yes
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/7 action=mark-connection new-connection-mark=conn2 passthrough=yes
+
+# ether3 (3 bagian)
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/8 action=mark-connection new-connection-mark=conn3 passthrough=yes
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/9 action=mark-connection new-connection-mark=conn3 passthrough=yes
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/10 action=mark-connection new-connection-mark=conn3 passthrough=yes
+
+# ether4 (3 bagian)
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/11 action=mark-connection new-connection-mark=conn4 passthrough=yes
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/12 action=mark-connection new-connection-mark=conn4 passthrough=yes
+add chain=prerouting in-interface=OUT connection-mark=no-mark connection-state=new \
+    per-connection-classifier=both-addresses:14/13 action=mark-connection new-connection-mark=conn4 passthrough=yes
+
+# =========================
+# 2. MARK ROUTING
+# =========================
+
+add chain=prerouting in-interface=OUT connection-mark=conn1 action=mark-routing new-routing-mark=to-ether1 passthrough=no
+add chain=prerouting in-interface=OUT connection-mark=conn2 action=mark-routing new-routing-mark=to-ether2 passthrough=no
+add chain=prerouting in-interface=OUT connection-mark=conn3 action=mark-routing new-routing-mark=to-ether3 passthrough=no
+add chain=prerouting in-interface=OUT connection-mark=conn4 action=mark-routing new-routing-mark=to-ether4 passthrough=no
