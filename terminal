@@ -1,0 +1,42 @@
+
+# IZIN WWW-DATA ALL
+sudo chown -R 33:33 /home/ubuntu/vnet-project/
+sudo chmod -R 755 /home/ubuntu/vnet-project/
+
+# IZIN ubuntu:www-data ALL
+sudo chown -R ubuntu:www-data /home/ubuntu/vnet-project/
+sudo chmod -R 755 /home/ubuntu/vnet-project/
+
+=================================================================
+# IZIN WWW-DATA TENANS
+sudo chown -R 33:33 /home/ubuntu/vnet-project/tenants/daftar
+sudo chmod -R 755 /home/ubuntu/vnet-project/tenants/daftar
+
+# IZIN ubuntu:www-data TENANS
+sudo chown -R ubuntu:www-data /home/ubuntu/vnet-project/tenants/daftar
+sudo chmod -R 755 /home/ubuntu/vnet-project/tenants/daftar
+
+=================================================================
+# IZIN WWW-DATA MASTER
+sudo chown -R 33:33 /home/ubuntu/vnet-project/master/
+sudo chmod -R 755 /home/ubuntu/vnet-project/master/
+
+# IZIN ubuntu:www-data MASTER
+sudo chown -R ubuntu:www-data /home/ubuntu/vnet-project/master/
+sudo chmod -R 755 /home/ubuntu/vnet-project/master/
+
+=================================================================
+# IZIN WWW-DATA MANAGER
+sudo chown -R 33:33 /home/ubuntu/vnet-project/manager/
+sudo chmod -R 755 /home/ubuntu/vnet-project/manager/
+
+# IZIN ubuntu:www-data MANAGER
+sudo chown -R ubuntu:www-data /home/ubuntu/vnet-project/manager/
+sudo chmod -R 755 /home/ubuntu/vnet-project/manager/
+
+
+
+
+
+
+
