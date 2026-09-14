@@ -1,0 +1,37 @@
+Langkah Konfigurasi
+1. Ketahui IP Publik Server L2TP
+Misal alamat server VPN Anda vpn.kantor.com, pastikan tahu IP publiknya (misal 202.152.xx.xx).
+
+2. Bypass Mangle Load Balance / PCC
+Tambahkan rule accept di urutan paling atas chain mangle agar trafik ke server L2TP tidak diacak oleh PCC:
+
+Code snippet
+/ip firewall mangle
+add chain=output dst-address=202.152.xx.xx action=accept place-before=0
+add chain=prerouting dst-address=202.152.xx.xx action=accept place-before=0
+(Ganti 202.152.xx.xx dengan IP server L2TP Anda).
+
+3. Buat Static Route Paksa ke ISP 1
+Paksa trafik tujuan IP server L2TP keluar lewat gateway ISP pilihan (misal 192.168.1.1 atau interface ether1-isp1):
+
+Code snippet
+/ip route
+add dst-address=202.152.xx.xx/32 gateway=192.168.1.1 distance=1
+(Ganti 192.168.1.1 dengan gateway ISP 1 Anda).
+
+Cara Verifikasi
+Cek Route aktif:
+
+Code snippet
+/ip route print where dst-address=202.152.xx.xx/32
+Pastikan statusnya As (Active, static).
+
+Cek jalur traceroute:
+
+Code snippet
+/tool traceroute 202.152.xx.xx
+Pastikan hop pertama melewati gateway/interface ISP 1, bukan ISP 2.
+
+Cek Koneksi L2TP: Dial/connect L2TP client seperti biasa, pastikan status running.
+
+Catatan: Jika IP server L2TP berubah-ubah (domain name), idealnya buat script kecil atau gunakan route via interface jika menggunakan PPPoE/DHCP client dari ISP.
