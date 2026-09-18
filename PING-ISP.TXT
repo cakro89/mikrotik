@@ -1,0 +1,16 @@
+/ip route disable [find comment="MAIN1"]
+/ip route disable [find comment="ISP1"]
+:log warning "LAPOR NDAN ISP-1 DOWN"
+
+
+/ip route enable [find comment="MAIN1"]
+/ip route enable [find comment="ISP1"]
+:log warning "LAPOR NDAN ISP-1 UP"
+==============================================
+/ip route disable [find comment="MAIN2"]
+/ip route disable [find comment="ISP2"]
+:log warning "LAPOR NDAN ISP-2 DOWN"
+
+/ip route enable [find comment="MAIN2"]
+/ip route enable [find comment="ISP2"]
+:log warning "LAPOR NDAN ISP-2 UP"
