@@ -1,0 +1,172 @@
+###### GAME
+/ip firewall raw
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Arena Of Valor - Mobile" dst-address-list=!LOCAL-IP dst-port=10001-10094 \
+    protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=10101-10201,10080-10110,17000-18000 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Booya Capsa Susun - Mobile" dst-address-list=!LOCAL-IP dst-port=\
+    7090-7100 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Booya Domino Qiuqiu - Mobile" dst-address-list=!LOCAL-IP dst-port=\
+    7020-7030 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Clash Of Clans - Mobile" dst-address-list=!LOCAL-IP dst-port=9330-9340 \
+    protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=9330-9340 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Clash Royale (Cry) - Mobile" dst-address-list=!LOCAL-IP dst-port=\
+    9330-9340 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=9330-9340 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment="Call Of Duty - Mobile" \
+    dst-address-list=!LOCAL-IP dst-port=\
+    3013,10000-10019,18082,50000,65010,65050 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=7085-7995,8700,9030,10010-10019,17000-20100 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment="DOTA2 - Mobile" \
+    dst-address-list=!LOCAL-IP dst-port=\
+    9100-9200,8230-8250,8110-8120,27000-28998 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=27000-28998,39000 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment="Domino Qq - Mobile" \
+    dst-address-list=!LOCAL-IP dst-port=9122,11000-11150 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment="Dragon Nest - Mobile" \
+    dst-address-list=!LOCAL-IP dst-port=10514 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Dream League Soccer - Mobile" dst-address-list=!LOCAL-IP dst-port=\
+    60970-60980 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment="FIFA ONLINE - Mobile" \
+    dst-address-list=!LOCAL-IP dst-port=7770-7790 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=16300-16350 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment="Free Fire - Mobile" \
+    dst-address-list=!LOCAL-IP dst-port=\
+    6006,6674,7006,7889,8001-8012,9006,9137,10000-10012,11000-11019 protocol=\
+    tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=12006,12008,13006,15006,20561,39003,39006,39698,39779,39800 \
+    protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port="6006,6008,7008,8008,8130,8443,9008,9120,10000-10015,10100,11000-\
+    11019,12008,13008" protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Genshin Impact - Mobile" dst-address-list=!LOCAL-IP dst-port=42472 \
+    protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=42472,22101-22102 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Higgs Domino Island - Mobile" dst-address-list=!LOCAL-IP dst-port=\
+    50000-50500 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=40000-40010 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "League of Legends - Mobile" dst-address-list=!LOCAL-IP dst-port=\
+    2080-2099 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=5100 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Last Empire War Z - Mobile" dst-address-list=!LOCAL-IP dst-port=\
+    9930-9940 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Line Lets Get Rich - Mobile" dst-address-list=!LOCAL-IP dst-port=\
+    10500-10515 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment="Minecraft - Mobile" \
+    dst-address-list=!LOCAL-IP dst-port=25565,19132-19133 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=25565,19132-19133 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Mobile Legends - Mobile" dst-address-list=!LOCAL-IP dst-port="5000-5221,5\
+    224-5227,5229-5241,5243-5508,5551-5559,5601-5700,9000-9010,9443" \
+    protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=5520-5529,10003,30000-30300,8443 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port="4001-4009,5000-5221,5224-5241,5243-5509,5551-5559,5601-5700,8130\
+    ,8443,9120" protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=2702,3702,5517,5520-5529,8001,9000-9010,9992,10003,30000-30300 \
+    protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment="Mostly - Mobile" \
+    dst-address-list=!LOCAL-IP dst-port=9933 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Naruto Little Ninja (China) - Mobile" dst-address-list=!LOCAL-IP \
+    dst-port=6170-6180 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment="Netmarble - Mobile" \
+    dst-address-list=!LOCAL-IP dst-port=12000-12010 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=44590-44610 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment="Point Blank - Mobile" \
+    dst-address-list=!LOCAL-IP dst-port=40000-40010 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment="PUBG - Mobile" \
+    dst-address-list=!LOCAL-IP dst-port=\
+    7889,10012,13004,14000,17000,17500,18081,20000-20002,20371 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=8011,9030,10491,10612,12235,13004,13748,17000,17500,20000-20002 \
+    protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=7086-7995,10039,10096,11455,12070-12460,13894,13972,41182-41192 \
+    protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment="Roblox - Mobile" \
+    dst-address-list=!LOCAL-IP dst-port=3074 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting dst-address-list=!LOCAL-IP \
+    dst-port=88,500,3074,3544,4500,49152-65535 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Rpg Toram Online - Mobile" dst-address-list=!LOCAL-IP dst-port=\
+    30100-30110 protocol=tcp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Rules Of Survival - Mobile" dst-address-list=!LOCAL-IP dst-port=\
+    24000-24050 protocol=udp
+add action=add-dst-to-address-list address-list=Routing-Game \
+    address-list-timeout=1d chain=prerouting comment=\
+    "Shinobi Heroes - Mobile" dst-address-list=!LOCAL-IP dst-port=10005-10020 \
+    protocol=tcp
+	
